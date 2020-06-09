@@ -1,0 +1,24 @@
+{
+  "name": "nf-ecomm-store",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "babel --watch src --out-dir dist"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Jack Herrington",
+    "email": "jherr@pobox.com"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.1",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6"
+  },
+  "dependencies": {
+    "nf-ecomm-logic": "1.0.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}

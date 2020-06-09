@@ -1,0 +1,26 @@
+{
+  "name": "nf-ecomm-frame",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "babel --watch src --out-dir dist"
+  },
+  "license": "MIT",
+  "main": "dist/Frame.js",
+  "author": {
+    "name": "Jack Herrington",
+    "email": "jherr@pobox.com"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.1",
+    "@babel/core": "7.9.6",
+    "@babel/preset-react": "7.9.4"
+  },
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-bootstrap": "^1.0.1",
+    "react-bootstrap-icons": "^1.0.3-alpha4",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
+  }
+}
