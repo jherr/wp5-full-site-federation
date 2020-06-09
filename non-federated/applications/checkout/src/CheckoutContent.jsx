@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Row, Col, Table } from "react-bootstrap";
 
 import { connect } from "react-redux";
-import { getPokemonPrice, getImage, checkout } from "nf-ecomm-logic";
+import { getImage, checkout } from "nf-ecomm-logic";
 
 const Cart = ({ items }) => (
   <Table striped>
@@ -22,8 +22,8 @@ const Cart = ({ items }) => (
           </td>
           <td width="50%">{pokemon.name.english}</td>
           <td width="15%">{count}</td>
-          <td width="15%">${getPokemonPrice(pokemon)}</td>
-          <td width="15%">${count * getPokemonPrice(pokemon)}</td>
+          <td width="15%">${pokemon.price}</td>
+          <td width="15%">${count * pokemon.price}</td>
         </tr>
       ))}
       <tr>
@@ -31,7 +31,7 @@ const Cart = ({ items }) => (
         <td>
           $
           {items.reduce(
-            (a, { count, pokemon }) => a + count * getPokemonPrice(pokemon),
+            (a, { count, pokemon: { price } }) => a + count * price,
             0
           )}
         </td>

@@ -1,6 +1,3 @@
-const getPokemonPrice = ({ base }) =>
-  Math.round(Object.values(base).reduce((a, n) => a + n) / 6);
-
 const getImage = (pokemon) =>
   `http://localhost:7000/images/${pokemon.name.english
     .toLowerCase()
@@ -40,7 +37,6 @@ const checkout = () =>
   }).then((resp) => resp.json());
 
 module.exports = {
-  getPokemonPrice,
   getImage,
   checkout,
   searchPokemon,

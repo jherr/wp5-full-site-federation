@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Row, Col } from "react-bootstrap";
 import { useQuery } from "react-query";
 
@@ -33,7 +32,10 @@ const PokemonCard = ({ id, children, right }) => {
               <h1>{pokemon.name.english}</h1>
               {children}
               <Row>
-                <Col xs={{ span: 3, offset: 9 }}>
+                <Col xs={{ span: 1, offset: 8 }} style={{ fontWeight: "bold" }}>
+                  ${pokemon.price}
+                </Col>
+                <Col xs={{ span: 3 }}>
                   <AddToCart pokemon={pokemon} />
                 </Col>
               </Row>
