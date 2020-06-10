@@ -3,6 +3,8 @@ Migration from Non-Federated to Federated
 
 We start off with a system that looks like this:
 
+# Initial State
+
 ![Starting Point](./diagrams/original-state.png)
 
 ## Step 1
@@ -36,4 +38,22 @@ We take the API functions that talk to the `product` service and move them into 
 We export all the React components that have the body content for the applications, and have `Frame` consume those and use `react-router-dom` for SPA based navigation.
 
 ![Step 5](./diagrams/step-5.png)
+
+# End State
+
+Both `home` and `search` both use the `AddToCart` React component from `checkout`.
+
+![AddToCart](./diagrams/end-addToCart.png)
+
+All the applications use `Frame` from the `home` application, and it in turn connects to all the applications to get the routes.
+
+![Frame](./diagrams/end-frame.png)
+
+All the applications talk to the API wrapper functions for the product endpoints. Only the `checkout` application use the API wrapper functions for the cart endpoints, but they remain available for anyone to use directly.
+
+![Logic](./diagrams/end-logic.png)
+
+The three applications all bring in the Redux store and pass it to `Provider`. That could probably be simplified and just be incorporated into `Frame`.
+
+![Redux store](./diagrams/end-store.png)
 
