@@ -30,7 +30,7 @@ const Cart = ({ items }) => (
       ))}
       <tr>
         <td colSpan="4">Grand Total</td>
-        <td>
+        <td id="total">
           $
           {items.reduce(
             (a, { count, pokemon: { price } }) => a + count * price,
