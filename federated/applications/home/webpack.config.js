@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const DashboardPlugin = require("@module-federation/dashboard-plugin");
 
 module.exports = {
   output: {
@@ -58,6 +59,15 @@ module.exports = {
         "react-redux",
         "redux",
       ],
+    }),
+    new DashboardPlugin({
+      dashboardURL: "http://localhost:3000/api/update",
+      metadata: {
+        source: {
+          url: "http://github.com",
+        },
+        remote: "http://localhost:8080/remoteEntry.js",
+      },
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",

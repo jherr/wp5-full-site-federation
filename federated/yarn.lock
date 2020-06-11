@@ -327,6 +327,20 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@module-federation/automatic-vendor-federation@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@module-federation/automatic-vendor-federation/-/automatic-vendor-federation-1.0.1.tgz#02e0852442684ae9fd34986a58ffa19748e23147"
+  integrity sha512-UMTIh4u/vaKLkaKnXunJrgXlIWXMaG7UYzkHgDVAsd66TVYmr1SnX8WC0rDhO3TTE+ohS2AOdoJQNcJPH5pwbQ==
+
+"@module-federation/dashboard-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@module-federation/dashboard-plugin/-/dashboard-plugin-1.0.0.tgz#ea254ba136650693fc7b59cdb4a350dfbad09b47"
+  integrity sha512-4q0XLagsp3BGmLba2ciKVODlLdUazT9ymK31B/wOr/lc5iWi05qyhXykD7wLsS8XKj1HEyqjTJvefdsZxguuaA==
+  dependencies:
+    "@module-federation/automatic-vendor-federation" "^1.0.1"
+    flatted "^2.0.2"
+    node-fetch "^2.6.0"
+
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@npmcli/move-file/-/move-file-1.0.1.tgz#de103070dac0f48ce49cf6693c23af59c0f70464"
@@ -2043,6 +2057,11 @@ findup-sync@3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
+flatted@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
+  integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
+
 follow-redirects@^1.0.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.11.0.tgz#afa14f08ba12a52963140fe43212658897bc0ecb"
@@ -3410,6 +3429,11 @@ no-case@^2.2.0:
   integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
   dependencies:
     lower-case "^1.1.1"
+
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-forge@0.9.0:
   version "0.9.0"
