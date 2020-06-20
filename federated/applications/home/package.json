@@ -4,7 +4,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "cypress:open": "cypress open",
-    "start": "webpack-dev-server --open --mode development --liveReload"
+    "start": "webpack-dev-server --open --mode development",
+    "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "license": "MIT",
   "author": {
@@ -20,7 +21,7 @@
     "cypress": "^4.8.0",
     "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
     "style-loader": "1.2.1",
-    "webpack": "5.0.0-beta.17",
+    "webpack": "5.0.0-beta.18",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.11.0"
   },

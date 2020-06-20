@@ -49,16 +49,7 @@ module.exports = {
         "./Search": "./src/SearchContent",
         "./products": "./src/products",
       },
-      shared: [
-        "react",
-        "react-dom",
-        "react-router-dom",
-        "react-bootstrap",
-        "react-bootstrap-icons",
-        "react-query",
-        "react-redux",
-        "redux",
-      ],
+      shared: require("./package.json").dependencies,
     }),
     new DashboardPlugin({
       dashboardURL: "http://localhost:3000/api/update",

@@ -51,17 +51,7 @@ module.exports = {
         "./checkout": "./src/checkout",
         "./store": "./src/store",
       },
-      shared: [
-        "react",
-        "react-dom",
-        "react-router-dom",
-        "react-bootstrap",
-        "react-bootstrap-icons",
-        "react-query",
-        "react-redux",
-        "redux",
-        "redux-thunk",
-      ],
+      shared: require("./package.json").dependencies,
     }),
     new DashboardPlugin({
       dashboardURL: "http://localhost:3000/api/update",
