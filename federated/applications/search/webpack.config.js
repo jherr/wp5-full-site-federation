@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const DashboardPlugin = require("@module-federation/dashboard-plugin");
 
+const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
     publicPath: "http://localhost:8081/",
@@ -18,6 +19,13 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.m?js/,
+        type: "javascript/auto",
+        resolve: {
+          fullySpecified: false,
+        },
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -38,18 +46,27 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "search",
-      library: { type: "var", name: "search" },
       filename: "remoteEntry.js",
       remotes: {
-        search: "search",
-        home: "home",
-        checkout: "checkout",
+        checkout: "checkout@http://localhost:8082/remoteEntry.js",
+        search: "search@http://localhost:8081/remoteEntry.js",
+        home: "home@http://localhost:8080/remoteEntry.js",
       },
       exposes: {
         "./Search": "./src/SearchContent",
         "./products": "./src/products",
       },
-      shared: require("./package.json").dependencies,
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
     }),
     new DashboardPlugin({
       dashboardURL: "http://localhost:3000/api/update",
